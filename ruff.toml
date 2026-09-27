@@ -1,0 +1,27 @@
+line-length = 100
+
+[lint]
+select = [
+    "E4",
+    "E7",
+    "E9",
+    "F",
+    "I",
+    "N",
+    "UP",
+    "B",
+    "S",
+    "SIM",
+    "C4",
+    "PTH",
+    "RET",
+    "ERA",
+    "RUF",
+]
+
+[lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[format]
+quote-style = "double"
+docstring-code-format = true

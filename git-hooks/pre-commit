@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Git runs this file when `core.hooksPath` is set to `git-hooks`:
+#   git config core.hooksPath git-hooks
+set -euo pipefail
+
+ROOT_DIR="$(git rev-parse --show-toplevel 2>/dev/null)" || {
+    echo "[pre-commit] Cannot locate the checkout root." >&2
+    exit 1
+}
+cd "$ROOT_DIR"
+node scripts/pre-commit/node-toolchain.mjs
+node scripts/pre-commit/python-toolchain.mjs
+node scripts/pre-commit/line-cap.mjs
+node scripts/pre-commit/pnpm-audit-prod.mjs

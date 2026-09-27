@@ -1,0 +1,8 @@
+interface:
+  display_name: "Product Capability"
+  short_description: "Interview, then update PRD, Arc42, and ADRs"
+  brand_color: "#0EA5E9"
+  default_prompt: "Use $product-capability to interview us and write the answers into docs/prd, docs/arc42, and docs/adrs. Do not invent product truth."
+
+policy:
+  allow_implicit_invocation: true
